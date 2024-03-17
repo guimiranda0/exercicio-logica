@@ -69,23 +69,15 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _desafio9(){
-    double portugues = 6.0;
-    double matematica = 6.0;
-    double historia = 5.0;
-    double geografia = 8.5;
-    double biologia = 9.0;
-    double media;
+    List <double> notas = [6.0, 9.0, 5.0, 8.5, 9.0];
+    double media = (notas[0] + notas[1] + notas[2] + notas[3] + notas[4])/ 5;
     String resposta;
-    media = (portugues + matematica + historia + geografia + biologia)/ 5;
+    
     if(media >= 7.0){
       resposta = "Aluno aprovado com média $media";
     } else {
       resposta = "Aluno reprovado com média $media";
     }
-
-    setState(() {
-      _result = resposta;
-    });
   }
 
   
