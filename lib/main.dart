@@ -56,6 +56,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  String _result = " ";
 
   void _incrementCounter() {
     setState(() {
@@ -65,6 +66,53 @@ class _MyHomePageState extends State<MyHomePage> {
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
       _counter++;
+      if(_counter== 1){
+        _desafio4();
+      } else if(_counter == 2){
+        _desafio9();
+      }
+    });
+  }
+
+  void _desafio4(){
+    int numero = 21;
+    String resposta = "";
+    if(numero % 2 == 0){
+      if(numero > 0){
+        resposta = " O número $numero é par e positivo!";
+      } else if(numero < 0) {
+        resposta = " O número $numero é par e negativo!";
+      }
+    } else {
+      if(numero > 0){
+        resposta = " O número $numero é ímpar e positivo!";
+      } else if(numero < 0) {
+        resposta = " O número $numero é ímpar e negativo!";
+      }
+    }
+
+    setState(() {
+      _result = resposta;
+    });
+  }
+
+  void _desafio9(){
+    double portugues = 6.0;
+    double matematica = 6.0;
+    double historia = 5.0;
+    double geografia = 8.5;
+    double biologia = 9.0;
+    double media;
+    String resposta;
+    media = (portugues + matematica + historia + geografia + biologia)/ 5;
+    if(media >= 7.0){
+      resposta = "Aluno aprovado com média $media";
+    } else {
+      resposta = "Aluno reprovado com média $media";
+    }
+
+    setState(() {
+      _result = resposta;
     });
   }
 
@@ -109,7 +157,7 @@ class _MyHomePageState extends State<MyHomePage> {
               'Resultado:',
             ),
             Text(
-              '$_counter',
+              _result,
               style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],
