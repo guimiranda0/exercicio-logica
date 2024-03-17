@@ -77,7 +77,10 @@ class _MyHomePageState extends State<MyHomePage> {
   void _desafio4(){
     int numero = 21;
     String resposta = "";
-    if(numero % 2 == 0){
+    
+    if (numero == 0){
+      resposta = "O número $numero é par!";
+    }else if(numero % 2 == 0 ){
       if(numero > 0){
         resposta = " O número $numero é par e positivo!";
       } else if(numero < 0) {
