@@ -96,6 +96,28 @@ void _desafio8() {
     });
   }
 
+void _desafio15() {
+    int entrada = 15;
+    List<int> lista = [];
+
+    criaLista(entrada) {
+      if (entrada >= 0) {
+      for (int i = entrada; i >= 0; i--) {
+        lista.add(i);
+        resultado = lista.reversed.toString();
+      }
+    } else {
+      for (int i = entrada; i <= 0; i++) {
+        lista.add(i);
+        resultado = lista.reversed.toString();
+      }
+    }
+    }
+
+    setState(() {
+      criaLista(entrada);
+    });
+  }
 
 
   void _incrementCounter() {
@@ -140,7 +162,7 @@ void _desafio8() {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _desafio8,
+        onPressed: _desafio15,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
