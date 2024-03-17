@@ -56,6 +56,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  String resultado = "";
 
   void _incrementCounter() {
     setState(() {
@@ -67,6 +68,17 @@ class _MyHomePageState extends State<MyHomePage> {
       _counter++;
     });
   }
+
+  void _desafio3() {
+  setState(() {
+   int numero = 4;
+   int resultadoTemp = 1;
+   for (int i = 1; i <= numero; i++) {
+     resultadoTemp *= i;
+   }
+   resultado = "O fatorial de $numero é $resultadoTemp.";
+   });
+  }  
 
   @override
   Widget build(BuildContext context) {
@@ -109,14 +121,14 @@ class _MyHomePageState extends State<MyHomePage> {
               'Resultado:',
             ),
             Text(
-              '$_counter',
+              resultado,
               style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: _desafio3,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
