@@ -56,14 +56,37 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  String resultado = "";
+
+void _desafio5() {
+    int numeroA = 4;
+    int numeroB = 4;
+
+    checaIguais(numeroA, numeroB) {
+      int result = 0;
+
+      if (numeroA == numeroB) {
+        result = numeroA + numeroB;
+        resultado = "Os números são iguais. A soma entre eles dá $result.";
+      } else {
+        result = numeroA * numeroB;
+        resultado = "Os números são diferentes. A multiplicação entre eles dá $result.";
+      }
+    }
+
+    setState(() {
+    checaIguais(numeroA, numeroB);
+
+      
+    });
+  }
+
+  
+
 
   void _incrementCounter() {
     setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
+      
       _counter++;
     });
   }
@@ -109,14 +132,14 @@ class _MyHomePageState extends State<MyHomePage> {
               'Resultado:',
             ),
             Text(
-              '$_counter',
+              resultado,
               style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: _desafio5,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
