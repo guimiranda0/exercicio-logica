@@ -68,19 +68,21 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  void _desafio9(){
-    double portugues = 6.0;
-    double matematica = 6.0;
-    double historia = 5.0;
-    double geografia = 8.5;
-    double biologia = 9.0;
-    double media;
+  void _desafio17(){
+    int numero = 29;
+    int divisores = 0;
     String resposta;
-    media = (portugues + matematica + historia + geografia + biologia)/ 5;
-    if(media >= 7.0){
-      resposta = "Aluno aprovado com média $media";
+    
+    for (int i = 1; i <= numero; i++) {
+     if(numero%i == 0){
+       divisores++;
+     }
+   }
+    
+    if(divisores == 2){
+      resposta = "$numero é primo";
     } else {
-      resposta = "Aluno reprovado com média $media";
+      resposta = "$numero não é primo";
     }
 
     setState(() {
