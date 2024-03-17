@@ -70,15 +70,24 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _desafio3() {
-  setState(() {
-   int numero = 4;
-   int resultadoTemp = 1;
-   for (int i = 1; i <= numero; i++) {
-     resultadoTemp *= i;
-   }
-   resultado = "O fatorial de $numero é $resultadoTemp.";
-   });
-  }  
+    setState(() {
+      int numero = 4;
+      int resultadoTemp = 1;
+      for (int i = 1; i <= numero; i++) {
+        resultadoTemp *= i;
+      }
+      resultado = "O fatorial de $numero é $resultadoTemp.";
+    });
+  }
+
+  void _desafio7() {
+    setState(() {
+    double salarioMin = 1412.00;
+    double salario = 9850.55;
+    
+    resultado = "O salário R\$$salario é equivalente à ${(salario / salarioMin).toStringAsFixed(2)} salários mínimos.";
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -123,12 +132,13 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               resultado,
               style: Theme.of(context).textTheme.headlineMedium,
+              textAlign: TextAlign.center,
             ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _desafio3,
+        onPressed: _desafio7,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
