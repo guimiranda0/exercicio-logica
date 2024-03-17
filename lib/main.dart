@@ -56,7 +56,6 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-  String _result = " ";
 
   void _incrementCounter() {
     setState(() {
@@ -66,33 +65,6 @@ class _MyHomePageState extends State<MyHomePage> {
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
       _counter++;
-      if(_counter== 1){
-        _desafio4();
-      } else if(_counter == 2){
-        _desafio9();
-      }
-    });
-  }
-
-  void _desafio4(){
-    int numero = 21;
-    String resposta = "";
-    if(numero % 2 == 0){
-      if(numero > 0){
-        resposta = " O número $numero é par e positivo!";
-      } else if(numero < 0) {
-        resposta = " O número $numero é par e negativo!";
-      }
-    } else {
-      if(numero > 0){
-        resposta = " O número $numero é ímpar e positivo!";
-      } else if(numero < 0) {
-        resposta = " O número $numero é ímpar e negativo!";
-      }
-    }
-
-    setState(() {
-      _result = resposta;
     });
   }
 
@@ -115,6 +87,8 @@ class _MyHomePageState extends State<MyHomePage> {
       _result = resposta;
     });
   }
+
+  
 
   @override
   Widget build(BuildContext context) {
@@ -157,7 +131,7 @@ class _MyHomePageState extends State<MyHomePage> {
               'Resultado:',
             ),
             Text(
-              _result,
+              '_counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],
