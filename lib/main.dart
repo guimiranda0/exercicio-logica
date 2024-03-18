@@ -58,6 +58,22 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
   String resultado = "";
 
+ //Desafio 1
+  void _desafio1() {
+    setState(() {
+    int numero1 = 20;
+    int numero2 = 50;
+    if (numero1 < numero2) {
+      resultado = "O maior número é numero2 = $numero2.";
+    } else if (numero1 > numero2) {
+      resultado = "O maior número é numero1 = $numero1.";
+    } else {
+      resultado = "Os números são iguais.";
+    }
+  });
+  }
+
+  
 void _desafio5() {
     int numeroA = 4;
     int numeroB = 4;
@@ -81,19 +97,7 @@ void _desafio5() {
     });
   }
 
-  //Desafio 1
-  void _desafio1() {
-    int numero1 = 20;
-    int numero2 = 50;
-    if (numero1 < numero2) {
-      resultado = "O maior número é numero2 = $numero2.";
-    } else if (numero1 > numero2) {
-      resultado = "O maior número é numero1 = $numero1.";
-    } else {
-      resultado = "Os números são iguais.";
-    }
-  }
-
+ 
   
 void _desafio8() {
     List<int> entrada = [-89,0,2597];
