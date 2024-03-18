@@ -93,6 +93,16 @@ void _desafio5() {
     });
   }
 
+   //Desafio 12
+  void _desafio12(){
+    
+  List<int> list1 = [1,2,3,4];
+  //Multiplicar os itens da lista inicial por ele mesmo.
+  List<int> list2 = list1.map((number)=> number*number).toList();
+ 
+  resultado = String.fromCharCodes(list2);
+  }  
+
 void _desafio8() {
     List<int> entrada = [-89,0,2597];
 
@@ -153,7 +163,7 @@ void _desafio8() {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _desafio8,
+        onPressed: _desafio12,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
