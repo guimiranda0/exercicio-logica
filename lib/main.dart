@@ -81,6 +81,20 @@ void _desafio5() {
     });
   }
 
+  //Desafio 1
+  void _desafio1() {
+    int numero1 = 20;
+    int numero2 = 50;
+    if (numero1 < numero2) {
+      resultado = "O maior número é numero2 = $numero2.";
+    } else if (numero1 > numero2) {
+      resultado = "O maior número é numero1 = $numero1.";
+    } else {
+      resultado = "Os números são iguais.";
+    }
+  }
+
+  
 void _desafio8() {
     List<int> entrada = [-89,0,2597];
 
@@ -140,7 +154,7 @@ void _desafio8() {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _desafio8,
+        onPressed: _desafio1,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
