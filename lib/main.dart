@@ -56,8 +56,31 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  String resultado = "";  
 
-  void _incrementCounter() {
+
+   //Desafio 2
+   void _desafio2() {
+   setState(() {
+      
+    int numero1 = 32;
+    int numero2 = 30;
+    int numero3 = 70;
+    int soma = numero1 + numero2;
+    if (soma < numero3) {
+      resultado =
+          "A soma de $numero1 e $numero2 é $soma;\nE o maior número entre $soma e $numero3 é $numero3.";
+    } else if (soma > numero3) {
+      resultado =
+          "A soma de $numero1 e $numero2 é $soma;\nE o maior número entre $soma e $numero3 é $numero3.";
+    } else {
+      resultado =
+          "A soma de $numero1 e $numero2 é $soma;\nE $soma e $numero3 são iguais.";
+    }
+    });
+  }
+  
+  void _desafio3() {
     setState(() {
       // This call to setState tells the Flutter framework that something has
       // changed in this State, which causes it to rerun the build method below
@@ -65,8 +88,164 @@ class _MyHomePageState extends State<MyHomePage> {
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
       _counter++;
+
+      int numero = 4;
+      int resultadoTemp = 1;
+      for (int i = 1; i <= numero; i++) {
+        resultadoTemp *= i;
+      }
+      resultado = "O fatorial de $numero é $resultadoTemp.";
     });
   }
+
+  void _desafio7() {
+    setState(() {
+      double salarioMin = 1412.00;
+      double salario = 9850.55;
+    
+      resultado = "O salário R\$$salario é equivalente à ${(salario / salarioMin).toStringAsFixed(2)} salários mínimos.";
+    });
+  }
+
+  void _desafio13() {
+    setState(() {
+      List lista1 = [4, 7, 9, 10, 45, 57, 98, 102, 201, 354];
+      int pares = 0;
+      int impares = 0;
+      
+      for (int num in lista1) {
+        if (num % 2 == 0) {
+          pares++;
+        } else {
+          impares++;
+        }
+      }
+
+      resultado = "A lista tem $pares números pares e $impares números ímpares.";    
+    });
+  }
+
+ //Desafio 1
+  void _desafio1() {
+    setState(() {
+    int numero1 = 20;
+    int numero2 = 50;
+    if (numero1 < numero2) {
+      resultado = "O maior número é numero2 = $numero2.";
+    } else if (numero1 > numero2) {
+      resultado = "O maior número é numero1 = $numero1.";
+    } else {
+      resultado = "Os números são iguais.";
+    }
+  });
+  }
+
+  
+void _desafio5() {
+    int numeroA = 4;
+    int numeroB = 4;
+
+    checaIguais(numeroA, numeroB) {
+      int result = 0;
+
+      if (numeroA == numeroB) {
+        result = numeroA + numeroB;
+        resultado = "Os números são iguais. A soma entre eles dá $result.";
+      } else {
+        result = numeroA * numeroB;
+        resultado = "Os números são diferentes. A multiplicação entre eles dá $result.";
+      }
+    }
+
+    setState(() {
+    checaIguais(numeroA, numeroB);
+
+      
+    });
+  }
+
+
+  //Desafio 12
+ void _desafio12(){
+  setState(() {
+    List<int> list1 = [3, 4, 5, 9, 10];
+    // Calcular o quadrado de cada número na lista inicial.
+    List<int> list2 = list1.map((number) => number * number).toList();
+
+    resultado = list2.toString();
+  });
+  }
+
+  //Desafio8
+void _desafio8() {
+    List<int> entrada = [-89,0,2597];
+
+    ordemDecrescente(entrada) {
+      entrada.sort();
+      var saida = entrada.reversed.toList();
+      resultado = "Os números em ordem decrescente ficam dessa forma: $saida.";
+    }
+    
+    
+    setState(() {
+      ordemDecrescente(entrada);
+    });
+  }
+
+void _desafio15() {
+    int entrada = 15;
+    List<int> lista = [];
+
+    criaLista(entrada) {
+      if (entrada >= 0) {
+      for (int i = entrada; i >= 0; i--) {
+        lista.add(i);
+        resultado = lista.reversed.toString();
+      }
+    } else {
+      for (int i = entrada; i <= 0; i++) {
+        lista.add(i);
+        resultado = lista.reversed.toString();
+      }
+    }
+    }
+    setState(() {
+      criaLista(entrada);
+    });
+  }
+
+
+  void _incrementCounter() {
+    setState(() {      
+      _counter++;
+    });
+  }
+
+  void _desafio4(){
+    int numero = 21;
+    String resposta = "";
+    
+    if (numero == 0){
+      resposta = "O número $numero é par!";
+    }else if(numero % 2 == 0 ){
+      if(numero > 0){
+        resposta = " O número $numero é par e positivo!";
+      } else if(numero < 0) {
+        resposta = " O número $numero é par e negativo!";
+      }
+    } else {
+      if(numero > 0){
+        resposta = " O número $numero é ímpar e positivo!";
+      } else if(numero < 0) {
+        resposta = " O número $numero é ímpar e negativo!";
+      }
+    }
+
+    setState(() {
+            resultado  = resposta;
+    });
+  }
+
 
   void _desafio17(){
     int numero = 29;
@@ -81,16 +260,60 @@ class _MyHomePageState extends State<MyHomePage> {
     
     if(divisores == 2){
       resposta = "$numero é primo";
+    }
+    
+    resultado = resposta;
+  }
+    
+    
+    
+  void _desafio9(){
+    List <double> notas = [6.0, 9.0, 5.0, 8.5, 9.0];
+    double media = (notas[0] + notas[1] + notas[2] + notas[3] + notas[4])/ 5;
+    String resposta;
+    
+    if(media >= 7.0){
+      resposta = "Aluno aprovado com média $media";
+
     } else {
       resposta = "$numero não é primo";
     }
-
+  
     setState(() {
-      _result = resposta;
+     resultado  = resposta;
     });
   }
-
   
+
+//Desafio 16
+  void _desafio16(){
+  setState(() {
+    bool checkPalindrome(String str2)
+  {
+    int i = 0, j = str2.length -1;
+    while (i < j)
+    {
+      if (str2[i] != str2[j])
+      {
+        return false;
+      }
+      i++;
+      j--;
+    }
+    return true;
+  }
+ String str1 = "A base do teto desaba";
+ String str2 = str1.replaceAll(RegExp('[^A-Za-z]'), ''); //Tira caracteres especiais e números
+  bool isPalindrome = checkPalindrome(str2.toUpperCase()); //toUpperCase deixa todos os caracteres em caixa alta.
+  if (isPalindrome)
+  {
+    resultado = " '$str1' é um palíndromo.";
+  }
+  else {
+    resultado = " '$str1' não é um palíndromo.";
+  }
+  });
+}
 
   @override
   Widget build(BuildContext context) {
@@ -111,36 +334,24 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
+        
         child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          //
-          // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-          // action in the IDE, or press "p" in the console), to see the
-          // wireframe for each widget.
+         
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
               'Resultado:',
             ),
             Text(
-              '_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+              resultado,
+  style: Theme.of(context).textTheme.headlineMedium,
+              textAlign: TextAlign.center,
             ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: _desafio15,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
