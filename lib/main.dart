@@ -57,6 +57,45 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
   String resultado = "";
+  
+  
+  void _desafio3() {
+    setState(() {
+      int numero = 4;
+      int resultadoTemp = 1;
+      for (int i = 1; i <= numero; i++) {
+        resultadoTemp *= i;
+      }
+      resultado = "O fatorial de $numero é $resultadoTemp.";
+    });
+  }
+
+  void _desafio7() {
+    setState(() {
+      double salarioMin = 1412.00;
+      double salario = 9850.55;
+    
+      resultado = "O salário R\$$salario é equivalente à ${(salario / salarioMin).toStringAsFixed(2)} salários mínimos.";
+    });
+  }
+
+  void _desafio13() {
+    setState(() {
+      List lista1 = [4, 7, 9, 10, 45, 57, 98, 102, 201, 354];
+      int pares = 0;
+      int impares = 0;
+      
+      for (int num in lista1) {
+        if (num % 2 == 0) {
+          pares++;
+        } else {
+          impares++;
+        }
+      }
+
+      resultado = "A lista tem $pares números pares e $impares números ímpares.";    
+    });
+  }
 
 void _desafio5() {
     int numeroA = 4;
@@ -119,13 +158,14 @@ void _desafio15() {
     });
   }
 
-
   void _incrementCounter() {
     setState(() {
       
       _counter++;
     });
   }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -157,6 +197,7 @@ void _desafio15() {
             Text(
               resultado,
               style: Theme.of(context).textTheme.headlineMedium,
+              textAlign: TextAlign.center,
             ),
           ],
         ),
