@@ -56,8 +56,8 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-  String resultado = "";
-  
+  String resultado = "";  
+
 
    //Desafio 2
    void _desafio2() {
@@ -82,6 +82,13 @@ class _MyHomePageState extends State<MyHomePage> {
   
   void _desafio3() {
     setState(() {
+      // This call to setState tells the Flutter framework that something has
+      // changed in this State, which causes it to rerun the build method below
+      // so that the display can reflect the updated values. If we changed
+      // _counter without calling setState(), then the build method would not be
+      // called again, and so nothing would appear to happen.
+      _counter++;
+
       int numero = 4;
       int resultadoTemp = 1;
       for (int i = 1; i <= numero; i++) {
@@ -202,7 +209,6 @@ void _desafio15() {
       }
     }
     }
-
     setState(() {
       criaLista(entrada);
     });
@@ -236,29 +242,26 @@ void _desafio15() {
     }
 
     setState(() {
-      resultado  = resposta;
+            resultado  = resposta;
     });
   }
 
   void _desafio9(){
-    double portugues = 6.0;
-    double matematica = 6.0;
-    double historia = 5.0;
-    double geografia = 8.5;
-    double biologia = 9.0;
-    double media;
+    List <double> notas = [6.0, 9.0, 5.0, 8.5, 9.0];
+    double media = (notas[0] + notas[1] + notas[2] + notas[3] + notas[4])/ 5;
     String resposta;
-    media = (portugues + matematica + historia + geografia + biologia)/ 5;
+    
     if(media >= 7.0){
       resposta = "Aluno aprovado com média $media";
     } else {
       resposta = "Aluno reprovado com média $media";
     }
-
+  
     setState(() {
      resultado  = resposta;
     });
   }
+  
 
 //Desafio 16
   void _desafio16(){
