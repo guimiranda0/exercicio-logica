@@ -118,7 +118,8 @@ void _desafio8() {
 
 //Desafio 16
   void _desafio16(){
-  bool checkPalindrome(String str2)
+  setState(() {
+    bool checkPalindrome(String str2)
   {
     int i = 0, j = str2.length -1;
     while (i < j)
@@ -142,6 +143,7 @@ void _desafio8() {
   else {
     resultado = " '$str1' não é um palíndromo.";
   }
+  });
 }
 
   @override
@@ -179,7 +181,7 @@ void _desafio8() {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _desafio8,
+        onPressed: _desafio16,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
