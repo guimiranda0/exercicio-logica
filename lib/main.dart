@@ -61,7 +61,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
    //Desafio 2
    void _desafio2() {
-    int numero1 = 40;
+   setState(() {
+      
+    int numero1 = 32;
     int numero2 = 30;
     int numero3 = 70;
     int soma = numero1 + numero2;
@@ -75,6 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
       resultado =
           "A soma de $numero1 e $numero2 é $soma;\nE $soma e $numero3 são iguais.";
     }
+    });
   }
   
   void _desafio3() {
