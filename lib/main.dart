@@ -56,6 +56,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  String resultado = "";
 
   void _incrementCounter() {
     setState(() {
@@ -65,8 +66,19 @@ class _MyHomePageState extends State<MyHomePage> {
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
       _counter++;
+      _desafio6;
     });
   }
+
+void _desafio6() {
+   setState(() {
+    int numero = 100; 	
+    String antecessor = (numero - 1).toString();
+    String sucessor = (numero + 1).toString();
+    resultado = "Antecessor: $antecessor e sucessor: $sucessor";
+      });
+    }
+  
 
   @override
   Widget build(BuildContext context) {
@@ -109,14 +121,14 @@ class _MyHomePageState extends State<MyHomePage> {
               'Resultado:',
             ),
             Text(
-              '$_counter',
+              resultado,
               style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: _desafio6,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
