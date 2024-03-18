@@ -58,6 +58,24 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
   String resultado = "";
   
+
+   //Desafio 2
+   void _desafio2() {
+    int numero1 = 40;
+    int numero2 = 30;
+    int numero3 = 70;
+    int soma = numero1 + numero2;
+    if (soma < numero3) {
+      resultado =
+          "A soma de $numero1 e $numero2 é $soma;\nE o maior número entre $soma e $numero3 é $numero3.";
+    } else if (soma > numero3) {
+      resultado =
+          "A soma de $numero1 e $numero2 é $soma;\nE o maior número entre $soma e $numero3 é $numero3.";
+    } else {
+      resultado =
+          "A soma de $numero1 e $numero2 é $soma;\nE $soma e $numero3 são iguais.";
+    }
+  }
   
   void _desafio3() {
   setState(() {
