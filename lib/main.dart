@@ -116,7 +116,33 @@ void _desafio8() {
     });
   }
 
-
+//Desafio 16
+  void _desafio16(){
+  bool checkPalindrome(String str2)
+  {
+    int i = 0, j = str2.length -1;
+    while (i < j)
+    {
+      if (str2[i] != str2[j])
+      {
+        return false;
+      }
+      i++;
+      j--;
+    }
+    return true;
+  }
+ String str1 = "A base do teto desaba";
+ String str2 = str1.replaceAll(RegExp('[^A-Za-z]'), ''); //Tira caracteres especiais e números
+  bool isPalindrome = checkPalindrome(str2.toUpperCase()); //toUpperCase deixa todos os caracteres em caixa alta.
+  if (isPalindrome)
+  {
+    resultado = " '$str1' é um palíndromo.";
+  }
+  else {
+    resultado = " '$str1' não é um palíndromo.";
+  }
+}
 
   @override
   Widget build(BuildContext context) {
