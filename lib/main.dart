@@ -58,18 +58,82 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
   String resultado = "";
   
+
+   //Desafio 2
+   void _desafio2() {
+   setState(() {
+      
+    int numero1 = 32;
+    int numero2 = 30;
+    int numero3 = 70;
+    int soma = numero1 + numero2;
+    if (soma < numero3) {
+      resultado =
+          "A soma de $numero1 e $numero2 é $soma;\nE o maior número entre $soma e $numero3 é $numero3.";
+    } else if (soma > numero3) {
+      resultado =
+          "A soma de $numero1 e $numero2 é $soma;\nE o maior número entre $soma e $numero3 é $numero3.";
+    } else {
+      resultado =
+          "A soma de $numero1 e $numero2 é $soma;\nE $soma e $numero3 são iguais.";
+    }
+    });
+  }
   
   void _desafio3() {
-  setState(() {
-   int numero = 4;
-   int resultadoTemp = 1;
-   for (int i = 1; i <= numero; i++) {
-     resultadoTemp *= i;
-   }
-   resultado = "O fatorial de $numero é $resultadoTemp.";
-   });
-  }  
+    setState(() {
+      int numero = 4;
+      int resultadoTemp = 1;
+      for (int i = 1; i <= numero; i++) {
+        resultadoTemp *= i;
+      }
+      resultado = "O fatorial de $numero é $resultadoTemp.";
+    });
+  }
 
+  void _desafio7() {
+    setState(() {
+      double salarioMin = 1412.00;
+      double salario = 9850.55;
+    
+      resultado = "O salário R\$$salario é equivalente à ${(salario / salarioMin).toStringAsFixed(2)} salários mínimos.";
+    });
+  }
+
+  void _desafio13() {
+    setState(() {
+      List lista1 = [4, 7, 9, 10, 45, 57, 98, 102, 201, 354];
+      int pares = 0;
+      int impares = 0;
+      
+      for (int num in lista1) {
+        if (num % 2 == 0) {
+          pares++;
+        } else {
+          impares++;
+        }
+      }
+
+      resultado = "A lista tem $pares números pares e $impares números ímpares.";    
+    });
+  }
+
+ //Desafio 1
+  void _desafio1() {
+    setState(() {
+    int numero1 = 20;
+    int numero2 = 50;
+    if (numero1 < numero2) {
+      resultado = "O maior número é numero2 = $numero2.";
+    } else if (numero1 > numero2) {
+      resultado = "O maior número é numero1 = $numero1.";
+    } else {
+      resultado = "Os números são iguais.";
+    }
+  });
+  }
+
+  
 void _desafio5() {
     int numeroA = 4;
     int numeroB = 4;
@@ -93,6 +157,8 @@ void _desafio5() {
     });
   }
 
+ 
+  
 void _desafio8() {
     List<int> entrada = [-89,0,2597];
 
@@ -108,6 +174,28 @@ void _desafio8() {
     });
   }
 
+void _desafio15() {
+    int entrada = 15;
+    List<int> lista = [];
+
+    criaLista(entrada) {
+      if (entrada >= 0) {
+      for (int i = entrada; i >= 0; i--) {
+        lista.add(i);
+        resultado = lista.reversed.toString();
+      }
+    } else {
+      for (int i = entrada; i <= 0; i++) {
+        lista.add(i);
+        resultado = lista.reversed.toString();
+      }
+    }
+    }
+
+    setState(() {
+      criaLista(entrada);
+    });
+  }
 
   void _incrementCounter() {
     setState(() {
@@ -176,12 +264,13 @@ void _desafio8() {
             Text(
               resultado,
               style: Theme.of(context).textTheme.headlineMedium,
+              textAlign: TextAlign.center,
             ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _desafio16,
+        onPressed: _desafio15,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
