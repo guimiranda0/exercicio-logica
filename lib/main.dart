@@ -93,14 +93,14 @@ void _desafio5() {
     });
   }
 
-   //Desafio 12
+  //Desafio 12
  void _desafio12(){
   setState(() {
     List<int> list1 = [3, 4, 5, 9, 10];
     // Calcular o quadrado de cada número na lista inicial.
     List<int> list2 = list1.map((number) => number * number).toList();
 
-    resultado = list2.join(", ");
+    resultado = resultado = String.fromCharCodes(list2);
   });
   }
 
