@@ -56,8 +56,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-  String resultado = "";  
-
+  String resultado = "";
 
    //Desafio 2
    void _desafio2() {
@@ -87,7 +86,21 @@ class _MyHomePageState extends State<MyHomePage> {
       // so that the display can reflect the updated values. If we changed
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
-      _counter++;
+      _counter++;     
+    });
+  }
+
+void _desafio6() {
+   setState(() {
+    int numero = 100; 	
+    String antecessor = (numero - 1).toString();
+    String sucessor = (numero + 1).toString();
+    resultado = "Antecessor: $antecessor e sucessor: $sucessor";
+      });
+    }
+  
+
+
 
       int numero = 4;
       int resultadoTemp = 1;
@@ -315,6 +328,7 @@ void _desafio15() {
   });
 }
 
+
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -351,7 +365,7 @@ void _desafio15() {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _desafio15,
+        onPressed: _desafio6,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
