@@ -246,6 +246,27 @@ void _desafio15() {
     });
   }
 
+
+  void _desafio17(){
+    int numero = 29;
+    int divisores = 0;
+    String resposta;
+    
+    for (int i = 1; i <= numero; i++) {
+     if(numero%i == 0){
+       divisores++;
+     }
+   }
+    
+    if(divisores == 2){
+      resposta = "$numero é primo";
+    }
+    
+    resultado = resposta;
+  }
+    
+    
+    
   void _desafio9(){
     List <double> notas = [6.0, 9.0, 5.0, 8.5, 9.0];
     double media = (notas[0] + notas[1] + notas[2] + notas[3] + notas[4])/ 5;
@@ -253,8 +274,9 @@ void _desafio15() {
     
     if(media >= 7.0){
       resposta = "Aluno aprovado com média $media";
+
     } else {
-      resposta = "Aluno reprovado com média $media";
+      resposta = "$numero não é primo";
     }
   
     setState(() {
