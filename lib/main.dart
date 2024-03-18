@@ -157,8 +157,19 @@ void _desafio5() {
     });
   }
 
- 
-  
+
+  //Desafio 12
+ void _desafio12(){
+  setState(() {
+    List<int> list1 = [3, 4, 5, 9, 10];
+    // Calcular o quadrado de cada número na lista inicial.
+    List<int> list2 = list1.map((number) => number * number).toList();
+
+    resultado = list2.toString();
+  });
+  }
+
+  //Desafio8
 void _desafio8() {
     List<int> entrada = [-89,0,2597];
 
