@@ -208,10 +208,55 @@ void _desafio15() {
     });
   }
 
+
   void _incrementCounter() {
-    setState(() {
-      
+    setState(() {      
       _counter++;
+    });
+  }
+
+  void _desafio4(){
+    int numero = 21;
+    String resposta = "";
+    
+    if (numero == 0){
+      resposta = "O número $numero é par!";
+    }else if(numero % 2 == 0 ){
+      if(numero > 0){
+        resposta = " O número $numero é par e positivo!";
+      } else if(numero < 0) {
+        resposta = " O número $numero é par e negativo!";
+      }
+    } else {
+      if(numero > 0){
+        resposta = " O número $numero é ímpar e positivo!";
+      } else if(numero < 0) {
+        resposta = " O número $numero é ímpar e negativo!";
+      }
+    }
+
+    setState(() {
+      resultado  = resposta;
+    });
+  }
+
+  void _desafio9(){
+    double portugues = 6.0;
+    double matematica = 6.0;
+    double historia = 5.0;
+    double geografia = 8.5;
+    double biologia = 9.0;
+    double media;
+    String resposta;
+    media = (portugues + matematica + historia + geografia + biologia)/ 5;
+    if(media >= 7.0){
+      resposta = "Aluno aprovado com média $media";
+    } else {
+      resposta = "Aluno reprovado com média $media";
+    }
+
+    setState(() {
+     resultado  = resposta;
     });
   }
 
@@ -274,7 +319,7 @@ void _desafio15() {
             ),
             Text(
               resultado,
-              style: Theme.of(context).textTheme.headlineMedium,
+  style: Theme.of(context).textTheme.headlineMedium,
               textAlign: TextAlign.center,
             ),
           ],
